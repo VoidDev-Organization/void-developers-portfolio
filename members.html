@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members - VoidDev</title>
+    <link rel="stylesheet" href="P_VoidDev.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="void-logo.png" alt="VOID Logo" class="logo-img">
+        </a>
+
+        <div class="hamburger" id="hamburger" onclick="toggleNav()">
+            <span></span><span></span><span></span>
+        </div>
+
+        <nav class="navbar" id="navbar">
+            <a href="members.html"             style="--i:2" class="nav-link active" onclick="closeNav()">Members</a>
+            <a href="index.html#about"    style="--i:1" class="nav-link" onclick="closeNav()">About</a>
+            <a href="index.html#projects"  style="--i:3" class="nav-link" onclick="closeNav()">Projects</a>
+            <a href="index.html#contact"   style="--i:4" class="nav-link" onclick="closeNav()">Contact</a>
+        </nav>
+    </header>
+
+    <section class="members" id="members" style="padding-top: 140px;">
+        <h2>Team Members</h2>
+        <div class="members-container">
+            <div id="membersGrid" class="members-grid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Team VoidDev. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            document.getElementById('navbar').classList.toggle('open');
+            document.getElementById('hamburger').classList.toggle('open');
+        }
+        function closeNav() {
+            document.getElementById('navbar').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('open');
+        }
+        window.addEventListener('click', function(e) {
+            const nav = document.getElementById('navbar');
+            const ham = document.getElementById('hamburger');
+            if (nav.classList.contains('open') && !nav.contains(e.target) && !ham.contains(e.target)) closeNav();
+        });
+    </script>
+    <script src="members.js"></script>
+</body>
+</html>
