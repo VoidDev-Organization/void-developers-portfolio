@@ -65,7 +65,7 @@ const MEMBERS = [
       },
     ],
     icons: ["github"],
-    socialLinks: { github: "https://github.com" },
+    socialLinks: { github: "https://github.com/Saeedhassa" },
     profile: null,
   },
   {
