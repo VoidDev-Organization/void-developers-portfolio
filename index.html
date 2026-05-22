@@ -1,153 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team VoidDev - Professional Development Team</title>
-    <link rel="stylesheet" href="P_VoidDev.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="P_VoidDev.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <a href="#home" class="logo">
-            <img src="void-logo.png" alt="VOID Logo" class="logo-img">
-        </a>
+      <a href="#home" class="logo">
+        <img src="void-logo.png" alt="VOID Logo" class="logo-img" />
+      </a>
 
-        <!-- Hamburger (mobile) -->
-        <div class="hamburger" id="hamburger" onclick="toggleNav()">
-            <span></span><span></span><span></span>
-        </div>
+      <!-- Hamburger (mobile) -->
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
 
-        <nav class="navbar" id="navbar">
-             <a href="members.html" style="--i:2" class="nav-link" onclick="closeNav()">Members</a>
-            <a href="#about"       style="--i:1" class="nav-link" onclick="closeNav()">About</a>
-            <a href="#projects"    style="--i:3" class="nav-link" onclick="closeNav()">Projects</a>
-            <a href="#contact"     style="--i:4" class="nav-link" onclick="closeNav()">Contact</a>
-        </nav>
+      <nav class="navbar" id="navbar">
+        <a
+          href="members.html"
+          style="--i: 2"
+          class="nav-link"
+          onclick="closeNav()"
+          >Members</a
+        >
+        <a href="#about" style="--i: 1" class="nav-link" onclick="closeNav()"
+          >About</a
+        >
+        <a href="#projects" style="--i: 3" class="nav-link" onclick="closeNav()"
+          >Projects</a
+        >
+        <a href="#contact" style="--i: 4" class="nav-link" onclick="closeNav()"
+          >Contact</a
+        >
+      </nav>
     </header>
 
     <!-- HOME -->
     <section class="home" id="home">
-        <div class="home-content">
-            <h3>Welcome to</h3>
-            <h1>TEAM VOIDDEV</h1>
-            <h3>We're a <span class="text"></span></h3>
-            <p>Professional development team creating innovative web solutions and digital experiences.<br>
-               Specializing in frontend design, web development, and creative solutions.</p>
-            <div class="home-sci">
-                <a href="#" style="--i:7" title="GitHub"><i class='bx bxl-github'></i></a>
-                <a href="mailto:team@voiddev.com" style="--i:8" title="Email"><i class='bx bx-envelope'></i></a>
-            </div>
-            <a href="members.html" class="btn-box">Meet Our Team</a>
+      <div class="home-content">
+        <h3>Welcome to</h3>
+        <h1>Team VoidDev</h1>
+        <h3>We're a <span class="text"></span></h3>
+        <p>
+          Professional development team creating innovative web solutions and
+          digital experiences.<br />
+          Specializing in frontend design, web development, and creative
+          solutions.
+        </p>
+        <div class="home-sci">
+          <a href="#" style="--i: 7" title="GitHub"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="mailto:team@voiddev.com" style="--i: 8" title="Email"
+            ><i class="bx bx-envelope"></i
+          ></a>
         </div>
+        <a href="members.html" class="btn-box">Meet Our Team</a>
+      </div>
     </section>
 
     <!-- ABOUT -->
     <section class="about" id="about">
-        <div class="about-content">
-            <h2>About Team VoidDev</h2>
-            <p>We are a talented group of developers and designers dedicated to creating exceptional digital solutions.
-               Our team combines creativity with technical expertise to deliver projects that make an impact.</p>
-            <div class="about-features">
-                <div class="feature">
-                    <i class='bx bx-code'></i>
-                    <h3>Clean Code</h3>
-                    <p>Writing maintainable and efficient code</p>
-                </div>
-                <div class="feature">
-                    <i class='bx bx-palette'></i>
-                    <h3>Modern Design</h3>
-                    <p>Contemporary and user-friendly interfaces</p>
-                </div>
-                <div class="feature">
-                    <i class='bx bx-team'></i>
-                    <h3>Team Collaboration</h3>
-                    <p>Working together to achieve excellence</p>
-                </div>
-            </div>
-            <div class="about-social">
-                <a href="#" title="Instagram"><i class='bx bxl-instagram'></i></a>
-                <a href="#" title="GitHub"><i class='bx bxl-github'></i></a>
-                <a href="mailto:team@voiddev.com" title="Email"><i class='bx bx-envelope'></i></a>
-            </div>
+      <div class="about-content">
+        <h2>About Team VoidDev</h2>
+        <p>
+          We are a talented group of developers and designers dedicated to
+          creating exceptional digital solutions. Our team combines creativity
+          with technical expertise to deliver projects that make an impact.
+        </p>
+        <div class="about-features">
+          <div class="feature">
+            <i class="bx bx-code"></i>
+            <h3>Clean Code</h3>
+            <p>Writing maintainable and efficient code</p>
+          </div>
+          <div class="feature">
+            <i class="bx bx-palette"></i>
+            <h3>Modern Design</h3>
+            <p>Contemporary and user-friendly interfaces</p>
+          </div>
+          <div class="feature">
+            <i class="bx bx-team"></i>
+            <h3>Team Collaboration</h3>
+            <p>Working together to achieve excellence</p>
+          </div>
         </div>
+        <div class="about-social">
+          <a href="#" title="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" title="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="mailto:team@voiddev.com" title="Email"
+            ><i class="bx bx-envelope"></i
+          ></a>
+        </div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
     <section class="projects" id="projects">
-        <h2>Our Projects</h2>
-        <div class="projects-container">
+      <h2>Our Projects</h2>
+      <div class="projects-container">
+        <div id="projectsGrid" class="projects-grid"></div>
+      </div>
 
-            <div id="projectsGrid" class="projects-grid"></div>
+      <!-- ADD PROJECT MODAL -->
+      <div id="projectFormModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="toggleProjectForm()">&times;</span>
+          <h3>Add Project</h3>
+          <div class="form-group">
+            <label for="projectName">Project Name</label>
+            <input type="text" id="projectName" />
+          </div>
+          <div class="form-group">
+            <label for="projectDescription">Description</label>
+            <textarea id="projectDescription" rows="4"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="projectTechnologies"
+              >Technologies (comma-separated)</label
+            >
+            <input
+              type="text"
+              id="projectTechnologies"
+              placeholder="e.g. React, Node.js, MongoDB"
+            />
+          </div>
+          <div class="form-group">
+            <label for="projectLink">Project Link</label>
+            <input
+              type="url"
+              id="projectLink"
+              placeholder="https://example.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="projectImage">Image URL (optional)</label>
+            <input
+              type="url"
+              id="projectImage"
+              placeholder="https://example.com/image.png"
+            />
+          </div>
+          <button class="btn-submit" onclick="addProject()">Add Project</button>
         </div>
+      </div>
 
-        <!-- ADD PROJECT MODAL -->
-        <div id="projectFormModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="toggleProjectForm()">&times;</span>
-                <h3>Add Project</h3>
-                <div class="form-group">
-                    <label for="projectName">Project Name</label>
-                    <input type="text" id="projectName">
-                </div>
-                <div class="form-group">
-                    <label for="projectDescription">Description</label>
-                    <textarea id="projectDescription" rows="4"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="projectTechnologies">Technologies (comma-separated)</label>
-                    <input type="text" id="projectTechnologies" placeholder="e.g. React, Node.js, MongoDB">
-                </div>
-                <div class="form-group">
-                    <label for="projectLink">Project Link</label>
-                    <input type="url" id="projectLink" placeholder="https://example.com">
-                </div>
-                <div class="form-group">
-                    <label for="projectImage">Image URL (optional)</label>
-                    <input type="url" id="projectImage" placeholder="https://example.com/image.png">
-                </div>
-                <button class="btn-submit" onclick="addProject()">Add Project</button>
-            </div>
+      <!-- ADMIN LOGIN MODAL -->
+      <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeAdminLogin()">&times;</span>
+          <h3>Admin Access</h3>
+          <div class="form-group">
+            <label for="adminPassword">Enter Admin Password</label>
+            <input
+              type="password"
+              id="adminPassword"
+              placeholder="Enter password"
+            />
+          </div>
+          <button class="btn-submit" onclick="adminLogin()">Login</button>
         </div>
-
-        <!-- ADMIN LOGIN MODAL -->
-        <div id="adminLoginModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeAdminLogin()">&times;</span>
-                <h3>Admin Access</h3>
-                <div class="form-group">
-                    <label for="adminPassword">Enter Admin Password</label>
-                    <input type="password" id="adminPassword" placeholder="Enter password">
-                </div>
-                <button class="btn-submit" onclick="adminLogin()">Login</button>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-content">
-            <p>Interested in working with our team? Let's connect!</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class='bx bx-envelope'></i>
-                    <p>team@voiddev.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class='bx bx-phone'></i>
-                    <p>+250 795 196 889</p>
-                </div>
-            </div>
+      <h2>Get In Touch</h2>
+      <div class="contact-content">
+        <p>Interested in working with our team? Let's connect!</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="bx bx-envelope"></i>
+            <p>team@voiddev.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="bx bx-phone"></i>
+            <p>+250 795 196 889</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 Team VoidDev. All rights reserved.</p>
+      <p>&copy; 2026 Team VoidDev. All rights reserved.</p>
     </footer>
 
     <script src="P_VoidDev.js"></script>
-</body>
+  </body>
 </html>
