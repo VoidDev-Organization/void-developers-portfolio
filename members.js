@@ -147,11 +147,11 @@ function makeTags(items, colorStyle) {
 function sectionBlock(emoji, label, color, tagsHTML) {
   if (!tagsHTML) return "";
   return `
-        <div style="margin: 12px 0;">
-            <strong style="color:${color};font-size:11px;text-transform:uppercase;letter-spacing:0.7px;">
+        <div style="margin: 7px 0;">
+            <strong style="color:${color};font-size:10px;text-transform:uppercase;letter-spacing:0.5px;">
                 ${emoji} ${label}
             </strong>
-            <div class="member-skills" style="margin-top:6px;">${tagsHTML}</div>
+            <div class="member-skills" style="margin-top:4px;">${tagsHTML}</div>
         </div>`;
 }
 
