@@ -179,40 +179,40 @@ function displayMembers() {
     const langSection = sectionBlock(
       "🗣️",
       "Languages",
-      "#a78bfa",
+      "#ffffff",
       makeTags(
         member.languages,
-        "background:rgba(167,139,250,0.08);color:#c4b5fd;border-color:rgba(167,139,250,0.25);",
+        "background:rgba(255,255,255,0.08);color:#ffffff;border-color:rgba(255,255,255,0.24);",
       ),
     );
 
     const fwSection = sectionBlock(
       "🧩",
       "Frameworks & Libraries",
-      "#7fffd4",
+      "#ffffff",
       makeTags(
         member.frameworks,
-        "background:rgba(0,255,180,0.07);color:#7fffd4;border-color:rgba(0,255,180,0.25);",
+        "background:rgba(255,255,255,0.08);color:#d9d9d9;border-color:rgba(255,255,255,0.24);",
       ),
     );
 
     const dbSection = sectionBlock(
       "🗄️",
       "Databases",
-      "#ffd580",
+      "#ffffff",
       makeTags(
         member.databases,
-        "background:rgba(255,190,60,0.08);color:#ffd580;border-color:rgba(255,190,60,0.25);",
+        "background:rgba(255,255,255,0.08);color:#ffffff;border-color:rgba(255,255,255,0.24);",
       ),
     );
 
     const skillSection = sectionBlock(
       "💡",
       "Skills",
-      "#a855f7",
+      "#ffffff",
       makeTags(
         member.skills,
-        "background:rgba(168,85,247,0.08);color:#c084fc;border-color:rgba(168,85,247,0.25);",
+        "background:rgba(255,255,255,0.08);color:#ffffff;border-color:rgba(255,255,255,0.24);",
       ),
     );
 
@@ -224,15 +224,15 @@ function displayMembers() {
           const url = typeof p === "object" ? p.url : null;
           if (url)
             return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-                    <span class="skill-tag" style="background:rgba(168,85,247,0.08);color:#c084fc;border-color:rgba(168,85,247,0.25);cursor:pointer;">📁 ${name}</span></a>`;
-          return `<span class="skill-tag" style="background:rgba(168,85,247,0.08);color:#c084fc;border-color:rgba(168,85,247,0.25);">📁 ${name}</span>`;
+                    <span class="skill-tag" style="background:rgba(255,255,255,0.12);color:#ffffff;border-color:rgba(255,255,255,0.24);cursor:pointer;">📁 ${name}</span></a>`;
+          return `<span class="skill-tag" style="background:rgba(255,255,255,0.12);color:#ffffff;border-color:rgba(255,255,255,0.24);">📁 ${name}</span>`;
         })
         .join("");
     }
     const projectSection = sectionBlock(
       "📁",
       "Projects",
-      "#a855f7",
+      "#ffffff",
       projectsHTML,
     );
 
@@ -261,7 +261,7 @@ function displayMembers() {
                     <div class="member-role">${member.role}</div>
                 </div>
             </div>
-            ${member.education ? `<div style="font-size:12px;color:#a78bfa;margin:8px 0;line-height:1.5;">🎓 ${member.education}</div>` : ""}
+            ${member.education ? `<div style="font-size:12px;color:#c9c9c9;margin:8px 0;line-height:1.5;">🎓 ${member.education}</div>` : ""}
             <div class="member-bio">${member.bio}</div>
             ${langSection}
             ${fwSection}
@@ -275,5 +275,3 @@ function displayMembers() {
     membersGrid.appendChild(card);
   });
 }
-
-// niggaaaa
