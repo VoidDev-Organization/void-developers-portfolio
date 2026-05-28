@@ -141,6 +141,25 @@ const PINNED_PROJECTS = [
     link: "https://void-cast-one.vercel.app",
     image: "void-cast.png",
   },
+  {
+    id: "pinned-amazon-clone",
+    pinned: true,
+    name: "Amazon clone",
+    description:
+      "Amazon-style shopping clone with product browsing, search, cart management, checkout, order history, and delivery tracking. It recreates the core flow of an online store, from adding items to viewing order progress.",
+    technologies: [
+      "localStorage",
+      "ES modules",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "JSON",
+      "Vercel",
+      "oop",
+    ],
+    link: "https://js-shop-project.vercel.app/",
+    image: "amazon.png",
+  },
 ];
 
 function addProject() {
