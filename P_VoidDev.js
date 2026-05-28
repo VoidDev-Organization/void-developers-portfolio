@@ -155,7 +155,7 @@ const PINNED_PROJECTS = [
       "JavaScript",
       "JSON",
       "Vercel",
-      "oop",
+      "OOP",
     ],
     link: "https://js-shop-project.vercel.app/",
     image: "amazon.png",
