@@ -120,6 +120,27 @@ const PINNED_PROJECTS = [
     link: "https://void-media-lynj.onrender.com",
     image: "void-media-preview.png",
   },
+  {
+    id: "pinned-void-cast",
+    pinned: true,
+    name: "Void Cast",
+    description:
+      "Void Cast is a media-sharing web app where users can upload “casts” into a shared feed. It supports images, videos, PDFs, and other files through Cloudinary, lets users add captions, and displays uploaded casts in a clean main feed.",
+    technologies: [
+      "Express.js",
+      "Node.js",
+      "HTML",
+      "EJS",
+      "CSS",
+      "JavaScript",
+      "JSON",
+      "MongoDB",
+      "Cloudinary",
+      "Vercel",
+    ],
+    link: "https://void-cast-one.vercel.app",
+    image: "void-cast.png",
+  },
 ];
 
 function addProject() {
