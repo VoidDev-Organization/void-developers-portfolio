@@ -32,7 +32,7 @@ const MEMBERS = [
         url: "https://void-media-lynj.onrender.com",
       },
       {
-        name: "Void-Cast,
+        name: "Void-Cast",
         url: "https://void-cast-one.vercel.app",
       },
       { name: "Amazon Clone", url: null },
