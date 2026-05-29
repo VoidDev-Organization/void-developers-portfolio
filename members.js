@@ -31,6 +31,10 @@ const MEMBERS = [
         name: "Void-Media (Social Messaging Platform)",
         url: "https://void-media-lynj.onrender.com",
       },
+      {
+        name: "Void-Cast,
+        url: "https://void-cast-one.vercel.app",
+      },
       { name: "Amazon Clone", url: null },
       { name: "Credit card validator", url: null },
       { name: "Encryption & ecryption program", url: null },
@@ -177,7 +181,7 @@ function displayMembers() {
     card.className = "member-card";
 
     const langSection = sectionBlock(
-      "🗣️",
+      "💻",
       "Languages",
       "#ffffff",
       makeTags(
