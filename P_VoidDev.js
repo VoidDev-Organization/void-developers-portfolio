@@ -1,6 +1,6 @@
 // ── Typed.js ──────────────────────────────────────────────────
 var typed = new Typed(".text", {
-  strings: ["Creative Development Team", "Web Solution Experts"],
+  strings: [" A Creative Development Team", "Web Solution Experts"],
   typeSpeed: 100,
   backSpeed: 100,
   backDelay: 1000,
@@ -229,7 +229,9 @@ function displayProjects() {
       .join("");
 
     const linkHTML = project.link
-      ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">🚀 View Project</a>`
+      ? `
+                <button type="button" class="project-link project-preview-toggle">Open Website</button>
+                <iframe src="${project.link}" class="project-preview-frame" title="${project.name} website preview" hidden></iframe>`
       : "";
 
     const deleteHTML = !project.pinned
@@ -254,7 +256,17 @@ function displayProjects() {
             </div>
         `;
 
-    // Make whole card clickable if it has a link
+    if (project.link) {
+      const toggle = card.querySelector(".project-preview-toggle");
+      const preview = card.querySelector(".project-preview-frame");
+
+      toggle.addEventListener("click", function () {
+        preview.hidden = !preview.hidden;
+        toggle.textContent = preview.hidden ? "Open Website" : "Hide Website";
+      });
+    }
+
+    /*
     if (project.link) {
       card.style.cursor = "pointer";
       card.addEventListener("click", function (e) {
@@ -262,7 +274,7 @@ function displayProjects() {
         window.open(project.link, "_blank", "noopener,noreferrer");
       });
     }
-
+*/
     grid.appendChild(card);
   });
 }
