@@ -1293,6 +1293,10 @@ body {
   /* Home */
   .home {
     padding: 100px 5% 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 34px;
   }
   .home-content h1 {
     font-size: 36px;
@@ -1302,6 +1306,39 @@ body {
   }
   .home-content p {
     font-size: 14px;
+  }
+
+  .home-showcase {
+    flex: none;
+    width: min(100%, 430px);
+    min-height: 310px;
+    align-self: center;
+  }
+
+  .home-showcase::before {
+    inset: 12% 5% 10%;
+  }
+
+  .floating-project {
+    border-radius: 12px;
+  }
+
+  .floating-project-main {
+    width: 72%;
+    top: 24%;
+    right: 8%;
+  }
+
+  .floating-project-top {
+    width: 52%;
+    top: 5%;
+    left: 4%;
+  }
+
+  .floating-project-bottom {
+    width: 54%;
+    right: 5%;
+    bottom: 5%;
   }
 
   /* Sections */
@@ -1344,6 +1381,33 @@ body {
 
 /* ── RESPONSIVE — SMALL PHONE (≤480px) ────────────────────── */
 @media (max-width: 480px) {
+  .home {
+    gap: 26px;
+  }
+
+  .home-showcase {
+    width: min(100%, 360px);
+    min-height: 250px;
+  }
+
+  .floating-project-main {
+    width: 76%;
+    top: 22%;
+    right: 5%;
+  }
+
+  .floating-project-top {
+    width: 55%;
+    top: 4%;
+    left: 2%;
+  }
+
+  .floating-project-bottom {
+    width: 57%;
+    right: 3%;
+    bottom: 4%;
+  }
+
   .home-content h1 {
     font-size: 30px;
   }
