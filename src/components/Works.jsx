@@ -141,10 +141,14 @@ const ProjectCard = forwardRef(({
             </div>
           </div>
 
-          <span className='project-reveal absolute top-3 right-3 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest bg-primary/70 backdrop-blur-sm border border-white/15 text-accent-soft rounded-full px-3 py-1.5 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500'>
+          <a
+            href={live_url}
+            aria-label={`View ${name} live website`}
+            className='project-reveal absolute top-3 right-3 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest bg-primary/70 backdrop-blur-sm border border-white/15 text-accent-soft rounded-full px-3 py-1.5 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-500'
+          >
             <ArrowIcon />
             View
-          </span>
+          </a>
         </div>
 
         <div className='mt-5'>

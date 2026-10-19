@@ -1,4 +1,4 @@
-import { Suspense, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useInView, useReducedMotion } from "framer-motion";
 import {
@@ -42,10 +42,29 @@ const Ball = ({ reduceMotion, ...props }) => {
   );
 };
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon, name }) => {
   const reduceMotion = useReducedMotion();
   const canvasRef = useRef(null);
   const isInView = useInView(canvasRef, { margin: '80px' });
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 639px)').matches,
+  );
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 639px)');
+    const updateViewport = (event) => setIsMobile(event.matches);
+
+    mediaQuery.addEventListener('change', updateViewport);
+    return () => mediaQuery.removeEventListener('change', updateViewport);
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div className='grid h-full w-full place-items-center rounded-full bg-white p-5 shadow-md'>
+        <img src={icon} alt={`${name} logo`} className='h-full w-full object-contain' />
+      </div>
+    );
+  }
 
   return (
     <div ref={canvasRef} className='w-full h-full'>
