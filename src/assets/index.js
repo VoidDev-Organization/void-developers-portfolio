@@ -16,7 +16,7 @@ import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
-import threejs from "./tech/threejs.svg";
+import threejs from "./tech/threejs.png";
 
 import voidMedia from "./void-media-preview.png";
 import voidCast from "./void-cast.png";
@@ -26,9 +26,9 @@ import emberBite from "./ember-bite.jpg";
 import emberPlate from "./ember-plate.jpg";
 import smartAntenna from "./smart-antenna.jpg";
 
-import fadiPhoto from "./members/fadi.jpg";
+import fadiPhoto from "./members/fadipro.jpeg";
 import saeedPhoto from "./members/saeed.jpg";
-import monzirPhoto from "./members/monzir.jpg";
+import monzirPhoto from "./members/monzirpro.jpeg";
 import abdelmonemPhoto from "./members/abdelmonem.jpg";
 
 export {

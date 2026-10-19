@@ -13,11 +13,19 @@ const Tech = () => {
         subtitle="The tools the team reaches for — from markup and styling on the front to the servers and databases behind them."
       />
 
-      <div className='mt-16 flex flex-row flex-wrap justify-center gap-10'>
+      <div className='mt-14 grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-3 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-10'>
         {technologies.map((technology) => (
-          <div className='w-28 h-28' key={technology.name}>
-            <BallCanvas icon={technology.icon} />
-          </div>
+          <article key={technology.name} className='min-w-0 text-center'>
+            <div className='mx-auto h-28 w-28 max-w-full'>
+              <BallCanvas icon={technology.icon} />
+            </div>
+            <h3 className='mt-3 text-sm font-semibold text-white sm:text-base'>
+              {technology.name}
+            </h3>
+            <p className='mx-auto mt-2 max-w-[26ch] text-xs leading-5 text-secondary sm:text-sm sm:leading-6'>
+              {technology.description}
+            </p>
+          </article>
         ))}
       </div>
     </>

@@ -60,7 +60,7 @@ const Journey = () => {
         align='center'
         kicker='What we have been building'
         title='Our Journey.'
-        subtitle="Four areas the team has been deepening — the study behind the code, the interfaces, the real-time backends and the design work that holds it together."
+        subtitle="The areas the team has been deepening — software foundations, interfaces, real-time backends and the design work that holds it together."
       />
 
       <div className='mt-20 flex flex-col'>

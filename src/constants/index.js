@@ -40,6 +40,10 @@ export const navLinks = [
     title: "Projects",
   },
   {
+    id: "pricing",
+    title: "Pricing",
+  },
+  {
     id: "team",
     title: "Members",
   },
@@ -50,18 +54,17 @@ export const navLinks = [
 ];
 
 /* Only categories that match a real project below. A project can sit in more
-   than one (the restaurant pages are both Restaurant & Food and Landing Pages). */
+   than one relevant category. */
 export const projectCategories = [
   { id: "all", label: "All Projects" },
   { id: "ecommerce", label: "E-commerce" },
   { id: "restaurant", label: "Restaurant & Food" },
-  { id: "landing", label: "Landing Pages" },
   { id: "education", label: "Education" },
   { id: "social", label: "Social & Community" },
 ];
 
 export const contactInfo = {
-  email: "teamvoiddev@gmail.com",
+  email: "voidbusiness2026@gmail.com",
   phones: ["+250 795 196 889", "+250 795 295 169"],
   github: "https://github.com/VoidDev-Organization",
   instagram: "https://www.instagram.com/voiddevelopers",
@@ -89,65 +92,77 @@ const services = [
 const technologies = [
   {
     name: "HTML 5",
+    description: "Structures the content and layout of web pages.",
     icon: html,
   },
   {
     name: "CSS 3",
+    description: "Styles pages and adapts layouts to every screen.",
     icon: css,
   },
   {
     name: "JavaScript",
+    description: "Adds behavior and interactivity to websites.",
     icon: javascript,
   },
   {
     name: "React JS",
+    description: "Builds interfaces from reusable components.",
     icon: reactjs,
   },
   {
     name: "Tailwind CSS",
+    description: "Speeds up consistent, responsive interface styling.",
     icon: tailwind,
   },
   {
     name: "Node JS",
+    description: "Runs JavaScript on servers and powers web APIs.",
     icon: nodejs,
   },
   {
     name: "MongoDB",
+    description: "Stores application data in flexible documents.",
     icon: mongodb,
   },
   {
     name: "Three JS",
+    description: "Creates real-time 3D graphics in the browser.",
     icon: threejs,
   },
   {
     name: "Figma",
+    description: "Designs screens, prototypes, and shared UI systems.",
     icon: figma,
   },
   {
     name: "Web Design",
+    description: "Shapes clear, accessible, user-friendly experiences.",
     icon: web,
   },
   {
     name: "Git",
+    description: "Tracks code changes and supports collaboration.",
     icon: git,
   },
   {
     name: "Backend",
+    description: "Powers the data, logic, and services behind an app.",
     icon: backend,
   },
 ];
 
 const journey = [
   {
-    title: "Software Engineering Studies",
-    company_name: "University of Lay Adventists of Kigali",
+    title: "Software Engineering Foundations",
+    company_name: "JavaScript & Core Computer Science",
     icon: javascript,
     iconBg: "#383E56",
-    date: "2023 — 2027",
+    date: "2023 — Present",
     points: [
-      "Studying software engineering with a focus on data structures, algorithms and object-oriented programming.",
-      "Building a strong foundation in database systems, operating concepts and web technologies.",
-      "Working on individual and group projects that turn theory into working software.",
+      "Building a practical foundation in data structures, algorithms and object-oriented programming.",
+      "Working with database systems, operating concepts and web technologies.",
+      "Turning individual and group ideas into working software projects.",
     ],
   },
   {
@@ -193,6 +208,7 @@ const members = [
     name: "Fadi Mohammed-Sami",
     role: "Full-Stack Developer",
     profile: fadiPhoto,
+    profilePosition: "50% 38%",
     bio: "Software engineering student building maintainable full-stack applications. Strong foundations in object-oriented programming, data structures, algorithms and database systems.",
     focus: ["Node.js", "Express.js", "MongoDB", "REST APIs"],
     education:
@@ -336,7 +352,7 @@ const projects = [
   },
   {
     name: "Ember & Bite",
-    categories: ["restaurant", "landing"],
+    categories: ["restaurant"],
     description:
       "A burger kitchen landing page built around one idea: smash it hot and serve it fast. Arch-framed hero product shot, oversized display type and a featured-item card with an inline add-to-order button.",
     tags: [
@@ -350,7 +366,7 @@ const projects = [
   },
   {
     name: "Ember & Plate",
-    categories: ["restaurant", "landing"],
+    categories: ["restaurant"],
     description:
       "A fine-dining restaurant page with a full-bleed photo hero, serif display headline and a paired call-to-action row. Layout and type scale tuned so the food photography stays the focus.",
     tags: [
@@ -440,7 +456,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    categories: ["landing"],
+    categories: ["social"],
     image: voidCast,
     live_url: "https://void-cast-one.vercel.app",
     source_code_link: contactInfo.github,

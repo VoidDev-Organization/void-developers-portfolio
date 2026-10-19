@@ -2,28 +2,30 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #050507;
+  --color-primary: #111111;
   --color-secondary: #d7d4df;
-  --color-tertiary: #151030;
-  --color-black-100: #100d25;
-  --color-black-200: #090325;
+  --color-tertiary: #1b1b1b;
+  --color-black-100: #181818;
+  --color-black-200: #101010;
   --color-white-100: #f3f3f3;
 
-  /* VoidDev brand (matches void-developers-portfolio.vercel.app) */
   --color-accent: #7c3aed;
   --color-accent-bright: #a78bfa;
   --color-accent-soft: #ede9fe;
   --color-accent-dim: #4c1d95;
   --color-muted: #9b96a8;
 
-  --shadow-card: 0px 35px 120px -15px #211e35;
+  --shadow-card: 0px 35px 120px -15px #090909;
   --shadow-glow: 0px 0px 28px rgba(124, 58, 237, 0.42);
 
   --breakpoint-xs: 450px;
 }
 
 @utility bg-hero-pattern {
-  background-image: url("/herobg.png");
+  background-color: #111111;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.075) 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
 /* Tailwind v4 puts preflight + utilities in cascade layers. Unlayered rules beat

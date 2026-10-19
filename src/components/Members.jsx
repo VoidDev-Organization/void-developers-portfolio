@@ -37,7 +37,6 @@ const HoverHint = () => (
   </span>
 );
 
-/* After Effects CC Light Sweep, rebuilt in CSS. */
 const Sheen = () => (
   <span className='pointer-events-none absolute inset-0 overflow-hidden rounded-[20px]'>
     <span className='absolute -inset-y-1/2 -left-1/2 w-1/2 rotate-12 bg-linear-to-r from-transparent via-white/10 via-45% to-white/60 to-transparent transition-transform duration-[900ms] ease-out -translate-x-[160%] group-hover:translate-x-[360%]' />
@@ -82,11 +81,13 @@ const IconButton = ({ href, label, children }) => (
 );
 
 /* ---------------- front: photo, name, role, bio overlay ---------------- */
-const FrontFace = ({ name, role, profile, bio, focus, showBack }) => (
+const FrontFace = ({ name, role, profile, profilePosition, bio, focus, showBack }) => (
   <div
     aria-hidden={showBack}
-    className={`absolute inset-0 flex flex-col overflow-hidden rounded-[20px] transition-all duration-500 ease-out ${
-      showBack ? 'pointer-events-none opacity-0 -translate-y-3' : 'opacity-100 translate-y-0'
+    className={`absolute inset-0 flex flex-col overflow-hidden rounded-[20px] transition-[opacity,transform] duration-500 ease-out ${
+      showBack
+        ? 'pointer-events-none opacity-0 -translate-y-3'
+        : 'opacity-100 translate-y-0 group-hover:pointer-events-none group-hover:opacity-0 group-hover:-translate-y-3 group-focus-within:pointer-events-none group-focus-within:opacity-0 group-focus-within:-translate-y-3'
     }`}
   >
     <div className='relative w-full h-[260px] overflow-hidden shrink-0'>
@@ -94,6 +95,7 @@ const FrontFace = ({ name, role, profile, bio, focus, showBack }) => (
         <img
           src={profile}
           alt={name}
+          style={profilePosition ? { objectPosition: profilePosition } : undefined}
           className='w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110'
           loading='lazy'
         />
@@ -105,7 +107,6 @@ const FrontFace = ({ name, role, profile, bio, focus, showBack }) => (
 
       <HoverHint />
 
-      {/* caption slides up on hover */}
       <div className='absolute inset-x-0 bottom-0 p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out'>
         <p className='text-white text-[13px] leading-[21px] line-clamp-3'>{bio}</p>
         <p className='mt-2 text-[11px] uppercase tracking-widest text-accent-bright'>
@@ -144,8 +145,10 @@ const BackFace = ({
 }) => (
   <div
     aria-hidden={!showBack}
-    className={`absolute inset-0 flex flex-col text-left p-6 rounded-[20px] transition-all duration-500 ease-out ${
-      showBack ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 translate-y-3'
+    className={`absolute inset-0 flex flex-col text-left p-6 rounded-[20px] transition-[opacity,transform] duration-500 ease-out ${
+      showBack
+        ? 'opacity-100 translate-y-0'
+        : 'pointer-events-none opacity-0 translate-y-3 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0'
     }`}
   >
     <h4 className='text-white text-[16px] font-bold'>{name}</h4>
@@ -220,54 +223,50 @@ const BackFace = ({
 
 const FlipCard = ({ member, index }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.4 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   const reduceMotion = useReducedMotion();
-  const [hovered, setHovered] = useState(false);
   const [reveal, setReveal] = useState(false);
 
-  // One-shot reveal when the card first scrolls into view.
   useEffect(() => {
     if (!isInView || reduceMotion) return;
 
     setReveal(true);
-    const half = setTimeout(() => setHovered(false), 460);
     const done = setTimeout(() => {
       setReveal(false);
-      setHovered(false);
     }, 940);
 
     return () => {
-      clearTimeout(half);
       clearTimeout(done);
     };
   }, [isInView, reduceMotion]);
 
-  const showBack = hovered || reveal;
+  const showBack = reveal;
 
   return (
     <motion.div
       ref={ref}
       variants={fadeIn('up', 'spring', index * 0.2, 0.75)}
+      initial='hidden'
+      animate={isInView ? 'show' : 'hidden'}
       whileHover={{ y: -4, transition: { duration: 0.22, ease: 'easeOut' } }}
       className='w-full h-full'
     >
-      {/* Cross-fade rather than a CSS 3D flip: in this page's subtree the
-          browser flattens the 3D context, so backface-visibility stops hiding
-          the mirrored front face. Opacity cannot break that way. */}
       <div className='w-full h-full'>
         <div
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          onFocus={() => setHovered(true)}
-          onBlur={() => setHovered(false)}
           tabIndex={0}
           role='group'
           aria-label={`${member.name} — hover or focus to see CV details`}
           style={{ perspective: 1200 }}
-          className={`group relative w-full h-full min-h-[560px] rounded-[20px] bg-tertiary ring-1 ring-accent/40 shadow-card transition-[transform,box-shadow] duration-500 ease-out hover:shadow-glow ${
-            showBack ? 'rotate-y-[-5deg] scale-[1.015]' : 'rotate-y-0 scale-100'
+          className={`group relative w-full h-full min-h-[560px] rounded-[20px] bg-tertiary ring-1 ring-accent/40 shadow-card transition-transform duration-500 ease-out ${
+            showBack
+              ? 'rotate-y-[-5deg] scale-[1.015]'
+              : 'rotate-y-0 scale-100 group-hover:rotate-y-[-5deg] group-hover:scale-[1.015] group-focus-within:rotate-y-[-5deg] group-focus-within:scale-[1.015]'
           }`}
         >
+          <span
+            aria-hidden='true'
+            className='pointer-events-none absolute inset-0 rounded-[20px] shadow-glow opacity-0 transition-opacity duration-500 group-hover:opacity-100'
+          />
           <FrontFace {...member} showBack={showBack} />
           <BackFace {...member} showBack={showBack} />
           <Sheen />

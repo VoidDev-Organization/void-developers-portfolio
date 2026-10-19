@@ -1,5 +1,4 @@
 import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
-import { Tilt } from "react-tilt";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import { SectionHeading } from "./index";
@@ -121,21 +120,12 @@ const ProjectCard = forwardRef(({
       whileHover={!reduceMotion ? { y: -4 } : undefined}
       layout
     >
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full h-full ring-1 ring-accent/30 transition-shadow duration-300 hover:shadow-glow'
-      >
-        {/* hover to see: the image zooms and a panel slides up with the full
-            description plus the demo / code links */}
-        <div className='group relative w-full h-[230px] overflow-hidden rounded-2xl'>
+      <div className='h-full w-full rounded-2xl bg-tertiary p-6 ring-1 ring-accent/30 transition-shadow duration-300 hover:shadow-glow'>
+        <div className='group relative h-[260px] w-full overflow-hidden rounded-2xl sm:h-[300px]'>
           <img
             src={image}
             alt={name}
-            className='w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110'
+            className='h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110'
             loading='lazy'
           />
 
@@ -146,18 +136,8 @@ const ProjectCard = forwardRef(({
               {description}
             </p>
             <div className='flex flex-wrap gap-2'>
-              {live_url && (
-                <CardLink href={live_url} primary>
-                  <ArrowIcon />
-                  Live demo
-                </CardLink>
-              )}
-              {source_code_link && (
-                <CardLink href={source_code_link}>
-                  <img src={github} alt='' className='w-3 h-3 object-contain' />
-                  Code
-                </CardLink>
-              )}
+              {live_url && <CardLink href={live_url} primary><ArrowIcon />Live demo</CardLink>}
+              {source_code_link && <CardLink href={source_code_link}><img src={github} alt='' className='h-3 w-3 object-contain' />Code</CardLink>}
             </div>
           </div>
 
@@ -169,7 +149,7 @@ const ProjectCard = forwardRef(({
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px] break-words'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px] leading-[22px] line-clamp-2'>
+          <p className='mt-2 text-secondary text-[14px] leading-[22px]'>
             {description}
           </p>
         </div>
@@ -184,7 +164,8 @@ const ProjectCard = forwardRef(({
             </p>
           ))}
         </div>
-      </Tilt>
+
+      </div>
     </motion.div>
   );
 });
@@ -242,7 +223,7 @@ const Works = () => {
 
       <div
         id='project-gallery'
-        className='mt-10 flex flex-wrap gap-7 items-stretch'
+        className='mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2 items-stretch'
         aria-live='polite'
       >
         <AnimatePresence mode='popLayout' initial={false}>

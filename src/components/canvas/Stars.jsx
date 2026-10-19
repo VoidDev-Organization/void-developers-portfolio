@@ -1,7 +1,7 @@
 import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
-import { useReducedMotion } from "framer-motion";
+import { useInView, useReducedMotion } from "framer-motion";
 import * as random from "maath/random/dist/maath-random.esm.js";
 
 const Stars = ({ reduceMotion, ...props }) => {
@@ -30,13 +30,15 @@ const Stars = ({ reduceMotion, ...props }) => {
 };
 
 const StarsCanvas = () => {
+  const canvasRef = useRef(null);
+  const isInView = useInView(canvasRef, { margin: '120px' });
   const reduceMotion = useReducedMotion();
 
   return (
-    <div className='w-full h-auto absolute inset-0 z-[-1]'>
+    <div ref={canvasRef} className='w-full h-auto absolute inset-0 z-[-1]'>
       <Canvas
         camera={{ position: [0, 0, 1] }}
-        frameloop={reduceMotion ? 'demand' : 'always'}
+        frameloop={!reduceMotion && isInView ? 'always' : 'demand'}
       >
         <Suspense fallback={null}>
           <Stars reduceMotion={reduceMotion} />

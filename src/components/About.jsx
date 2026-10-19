@@ -1,4 +1,3 @@
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -8,14 +7,7 @@ import SectionHeading from "./SectionHeading";
 import { fadeIn } from "../utils/motion";
 
 const ServiceCard = ({ title, icon }) => (
-  <Tilt
-    options={{
-      max: 45,
-      scale: 1,
-      speed: 450,
-    }}
-    className='xs:w-[250px] w-full'
-  >
+  <div className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("up", "tween", 0, 0.5)}
       whileHover={{ y: -6, transition: { duration: 0.2 } }}
@@ -34,7 +26,7 @@ const ServiceCard = ({ title, icon }) => (
         </h3>
       </div>
     </motion.div>
-  </Tilt>
+  </div>
 );
 
 const About = () => {

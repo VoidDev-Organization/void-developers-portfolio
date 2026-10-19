@@ -5,6 +5,7 @@ import About from "./About";
 import Tech from "./Tech";
 import Journey from "./Journey";
 import Works from "./Works";
+import Pricing from "./Pricing";
 import Members from "./Members";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
@@ -19,6 +20,7 @@ export {
   Tech,
   Journey,
   Works,
+  Pricing,
   Members,
   Contact,
   CanvasLoader,

@@ -6,6 +6,7 @@ import {
   Contact,
   Journey,
   Members,
+  Pricing,
   Hero,
   Navbar,
   ScrollManager,
@@ -20,7 +21,7 @@ const App = () => {
       <BrowserRouter>
         <ScrollManager />
         <div className='relative z-0 bg-primary'>
-          <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+          <div className='bg-hero-pattern'>
             <Navbar />
             <Hero />
           </div>
@@ -28,6 +29,7 @@ const App = () => {
           <Journey />
           <Tech />
           <Works />
+          <Pricing />
           <Members />
           <div className='relative z-0'>
             <Contact />
