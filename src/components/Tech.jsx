@@ -14,10 +14,15 @@ const Tech = () => {
       />
 
       <div className='mt-14 grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-3 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-10'>
-        {technologies.map((technology) => (
+        {technologies.map((technology, index) => (
           <article key={technology.name} className='min-w-0 text-center'>
             <div className='mx-auto h-28 w-28 max-w-full'>
-              <BallCanvas icon={technology.icon} name={technology.name} />
+              <BallCanvas
+                icon={technology.icon}
+                name={technology.name}
+                index={index}
+                mobileImageFallback={technology.mobileImageFallback}
+              />
             </div>
             <h3 className='mt-3 text-sm font-semibold text-white sm:text-base'>
               {technology.name}

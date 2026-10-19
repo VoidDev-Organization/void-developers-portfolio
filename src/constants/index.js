@@ -93,31 +93,37 @@ const technologies = [
   {
     name: "HTML 5",
     description: "Structures the content and layout of web pages.",
+    mobileImageFallback: true,
     icon: html,
   },
   {
     name: "CSS 3",
     description: "Styles pages and adapts layouts to every screen.",
+    mobileImageFallback: true,
     icon: css,
   },
   {
     name: "JavaScript",
     description: "Adds behavior and interactivity to websites.",
+    mobileImageFallback: true,
     icon: javascript,
   },
   {
     name: "React JS",
     description: "Builds interfaces from reusable components.",
+    mobileImageFallback: true,
     icon: reactjs,
   },
   {
     name: "Tailwind CSS",
     description: "Speeds up consistent, responsive interface styling.",
+    mobileImageFallback: true,
     icon: tailwind,
   },
   {
     name: "Node JS",
     description: "Runs JavaScript on servers and powers web APIs.",
+    mobileImageFallback: true,
     icon: nodejs,
   },
   {

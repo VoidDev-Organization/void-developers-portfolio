@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { useInView, useReducedMotion } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import {
   Decal,
   Float,
@@ -42,7 +42,7 @@ const Ball = ({ reduceMotion, ...props }) => {
   );
 };
 
-const BallCanvas = ({ icon, name }) => {
+const BallCanvas = ({ icon, name, index = 0, mobileImageFallback = false }) => {
   const reduceMotion = useReducedMotion();
   const canvasRef = useRef(null);
   const isInView = useInView(canvasRef, { margin: '80px' });
@@ -58,11 +58,19 @@ const BallCanvas = ({ icon, name }) => {
     return () => mediaQuery.removeEventListener('change', updateViewport);
   }, []);
 
-  if (isMobile) {
+  if (isMobile && mobileImageFallback) {
     return (
-      <div className='grid h-full w-full place-items-center rounded-full bg-white p-5 shadow-md'>
+      <motion.div
+        animate={reduceMotion ? undefined : { y: [0, -7, 0], rotate: [-4, 4, -4] }}
+        transition={{
+          duration: 3 + (index % 4) * 0.35,
+          repeat: reduceMotion ? 0 : Infinity,
+          ease: 'easeInOut',
+        }}
+        className='grid h-full w-full place-items-center rounded-full bg-white p-5 shadow-md'
+      >
         <img src={icon} alt={`${name} logo`} className='h-full w-full object-contain' />
-      </div>
+      </motion.div>
     );
   }
 
