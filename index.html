@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Team VoidDev - a professional development team creating innovative web solutions and digital experiences. Frontend, backend and UI/UX design."
+    />
+    <meta name="theme-color" content="#050507" />
+    <title>Team VoidDev | Professional Development Team</title>
+    <!--
+      Run before the document loads: browsers default to
+      history.scrollRestoration = "auto", which re-applies the previous offset
+      on refresh and makes the page reopen halfway down. Opting out here (a
+      module script is deferred and would be too late) hands control to
+      <ScrollManager />, which honours explicit #hash deep links instead.
+    -->
+    <script>
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
