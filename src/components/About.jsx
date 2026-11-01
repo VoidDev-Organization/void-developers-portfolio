@@ -14,14 +14,14 @@ const ServiceCard = ({ title, icon }) => (
       whileTap={{ scale: 0.98 }}
       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
     >
-      <div className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'>
+      <div className='bg-tertiary rounded-[20px] py-4 px-3 min-h-[180px] sm:min-h-[280px] sm:px-12 sm:py-5 flex justify-evenly items-center flex-col'>
         <img
           src={icon}
           alt='web-development'
-          className='w-16 h-16 object-contain'
+          className='w-11 h-11 sm:w-16 sm:h-16 object-contain'
         />
 
-        <h3 className='text-white text-[20px] font-bold text-center'>
+        <h3 className='text-white text-[14px] sm:text-[20px] font-bold text-center'>
           {title}
         </h3>
       </div>
@@ -38,7 +38,7 @@ const About = () => {
         subtitle="We are a talented group of developers and designers dedicated to creating exceptional digital solutions. Our team combines creativity with technical expertise to deliver projects that make an impact — from research and design through to clean, tested, production-ready code."
       />
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-10 sm:mt-20 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-10'>
         {services.map((service) => (
           <ServiceCard key={service.title} {...service} />
         ))}

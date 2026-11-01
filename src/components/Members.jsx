@@ -90,7 +90,7 @@ const FrontFace = ({ name, role, profile, profilePosition, bio, focus, showBack 
         : 'opacity-100 translate-y-0 group-hover:pointer-events-none group-hover:opacity-0 group-hover:-translate-y-3 group-focus-within:pointer-events-none group-focus-within:opacity-0 group-focus-within:-translate-y-3'
     }`}
   >
-    <div className='relative w-full h-[260px] overflow-hidden shrink-0'>
+    <div className='relative w-full h-[150px] sm:h-[260px] overflow-hidden shrink-0'>
       {profile ? (
         <img
           src={profile}
@@ -115,9 +115,9 @@ const FrontFace = ({ name, role, profile, profilePosition, bio, focus, showBack 
       </div>
     </div>
 
-    <div className='flex flex-col items-center text-center px-6 pt-5 pb-6'>
-      <h3 className='text-white text-[21px] font-bold leading-tight'>{name}</h3>
-      <p className='mt-1.5 text-accent-bright text-[12px] font-semibold uppercase tracking-wider'>
+    <div className='flex flex-col items-center text-center px-2 py-3 sm:px-6 sm:pt-5 sm:pb-6'>
+      <h3 className='text-white text-[15px] sm:text-[21px] font-bold leading-tight'>{name}</h3>
+      <p className='mt-1.5 text-accent-bright text-[9px] sm:text-[12px] font-semibold uppercase tracking-wider'>
         {role}
       </p>
       <div className='mt-4 flex flex-wrap justify-center gap-1.5'>
@@ -145,7 +145,7 @@ const BackFace = ({
 }) => (
   <div
     aria-hidden={!showBack}
-    className={`absolute inset-0 flex flex-col text-left p-6 rounded-[20px] transition-[opacity,transform] duration-500 ease-out ${
+    className={`absolute inset-0 flex flex-col text-left p-3 sm:p-6 rounded-[20px] transition-[opacity,transform] duration-500 ease-out ${
       showBack
         ? 'opacity-100 translate-y-0'
         : 'pointer-events-none opacity-0 translate-y-3 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0'
@@ -190,7 +190,7 @@ const BackFace = ({
       )}
     </div>
 
-    <div className='mt-4 pt-4 border-t border-white/10 flex items-center justify-between gap-3'>
+    <div className='mt-3 pt-3 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3'>
       <div className='flex items-center gap-2'>
         {github && (
           <IconButton href={github} label={`${name} on GitHub`}>
@@ -209,7 +209,7 @@ const BackFace = ({
           href={`${import.meta.env.BASE_URL}cv/${cv}`}
           download
           onClick={(e) => e.stopPropagation()}
-          className='inline-flex items-center gap-2 min-h-[44px] text-[13px] font-semibold bg-accent text-white rounded-lg px-4 py-2.5 hover:bg-accent-bright hover:text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-bright'
+          className='inline-flex items-center justify-center gap-1.5 min-h-[40px] text-[10px] sm:text-[13px] font-semibold bg-accent text-white rounded-lg px-2 sm:px-4 py-2 hover:bg-accent-bright hover:text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-bright'
         >
           <DownloadIcon />
           Download CV
@@ -257,7 +257,7 @@ const FlipCard = ({ member, index }) => {
           role='group'
           aria-label={`${member.name} — hover or focus to see CV details`}
           style={{ perspective: 1200 }}
-          className={`group relative w-full h-full min-h-[560px] rounded-[20px] bg-tertiary ring-1 ring-accent/40 shadow-card transition-transform duration-500 ease-out ${
+          className={`group relative w-full h-full min-h-[360px] sm:min-h-[560px] rounded-[20px] bg-tertiary ring-1 ring-accent/40 shadow-card transition-transform duration-500 ease-out ${
             showBack
               ? 'rotate-y-[-5deg] scale-[1.015]'
               : 'rotate-y-0 scale-100 group-hover:rotate-y-[-5deg] group-hover:scale-[1.015] group-focus-within:rotate-y-[-5deg] group-focus-within:scale-[1.015]'
@@ -289,7 +289,7 @@ const Members = () => {
         subtitle="Four developers and designers working as one team — backend, frontend and design covered end to end, so a project never falls between roles. Hover any card for the full skill set, contact links and CV."
       />
 
-      <div className='mt-16 grid grid-cols-1 sm:grid-cols-2 gap-7 items-stretch'>
+      <div className='mt-10 grid grid-cols-2 gap-3 items-stretch sm:mt-16 sm:gap-7'>
         {members.map((member, index) => (
           <FlipCard key={member.name} member={member} index={index} />
         ))}
